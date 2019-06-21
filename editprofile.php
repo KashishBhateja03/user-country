@@ -16,5 +16,12 @@
       <label for="countryname">Country name:</label><br>
       <input type="text" id="countryname" name="countryname">
     </div> -->
+   <?php
+  $con = mysqli_connect("127.0.0.1","root","","countryproject");
+  $sql= update into user(username,password) values("$username","$password");
+  $result=mysql_query($sql,$con);
+  mysqli_close($con);
+  ?>
+
 </body>
 </html>
