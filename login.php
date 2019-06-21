@@ -61,7 +61,20 @@ label.error {
         </div>
       </form>
     </div>
+     <?php
+      $con = mysqli_connect("127.0.0.1","root","","countryproject");
+      if (!$con)
+      {
+        die ('Could not connect:' . mysql_error());
+      }
+        echo $_POST['username'];
+      $sql= "INSERT INTO user values($_POST['username'],$_POST['password'])";
+      $con->exec($sql);
+      $result=mysql_query($sql,$con);
+      echo " ". $_POST['username'];
+      mysqli_close($con);
+      ?>
 
-  </body>
+    </body>
 
 </html>
